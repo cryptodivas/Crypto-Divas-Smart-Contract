@@ -1,0 +1,15 @@
+node_modules
+.env
+coverage
+coverage.json
+typechain
+script
+secret.json
+arguments.js
+secret.json
+#Hardhat files
+cache
+artifacts
+helper contracts
+hardhat.config.js
+secrets.json
