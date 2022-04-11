@@ -20,7 +20,7 @@ describe("ProjectName Public Sale (Dutch Auction)", function () {
   before(async function () {
     accounts = await web3.eth.getAccounts();
     projectName = await ProjectName.new("ipfs://QmezoosjRhhrEG1ZdZRMqD2orFFBGcy7cGe5ervyLxBUdF",
-    "0xff", 100, 500);
+    "0xff","0x9550dd40ed8c29bbbafe1744be53c905e3df8951c698dc529999fd17f45bcc04", 1649668182, 100, 500);
 
     presaleConfig = await projectName.presaleConfig();
     dutchAuctionConfig = await projectName.dutchAuctionConfig();

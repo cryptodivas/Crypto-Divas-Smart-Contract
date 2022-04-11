@@ -18,7 +18,7 @@ describe("projectName Presale", function () {
 
     let ProjectName = await ethers.getContractFactory("CryptoDivas");  
     projectName = await ProjectName.deploy("ipfs://QmezoosjRhhrEG1ZdZRMqD2orFFBGcy7cGe5ervyLxBUdF",
-    "0x1abbd2457d497fb5054bf780aba3e67de04596e7c6ddec13afbbd57654e74a8f", 100, 9999);
+    "0x1abbd2457d497fb5054bf780aba3e67de04596e7c6ddec13afbbd57654e74a8f","0x9550dd40ed8c29bbbafe1744be53c905e3df8951c698dc529999fd17f45bcc04", 1649668182, 100, 9999);
 
     [owner, addr2, addr3, addr4] = await ethers.getSigners();
     upperlimit = 4000;
