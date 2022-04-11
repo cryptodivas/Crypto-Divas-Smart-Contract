@@ -28,7 +28,7 @@ Merkle root hash can be generated using the npm library: https://www.npmjs.com/p
 
 ### Provenance Hash coupled with randomization factor for NFT metadata integrity and fair distribution
 
-A bytes32 variable called provenance hash is used to hash the NFT metadata url before performing randomization. It can be set in the function:
+A bytes32 variable called provenance hash is used to hash the NFT metadata url. It can be set in the function:
 ```
 setProvenance(bytes32 provenanceHash)
 ```
@@ -42,8 +42,7 @@ This is used to counter NFT snipers, minimize gas wars and ensure a much fairer 
 
 ## Reveal NFT
 
-The NFT base URL can only be set to the url where the hash of the url should be equal to the provenance hash.
-After setting the base url the randomization function is performed.
+After performing randomization, the provenance hash cannot be changed and the NFT base URL can only be set to the url where the hash of the url should be equal to the provenance hash.
 This is done to make sure that no one has centralised control over the metadata.
 
 
