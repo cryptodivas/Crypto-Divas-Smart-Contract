@@ -1,12 +1,19 @@
 const { ethers } = require("hardhat");
-const hre = require("hardhat");
-let secret = require("../secret");
-let data = require("../test/addressesAndTokens");
 
 async function main() {
 
-    const CD = await hre.ethers.getContractFactory("CryptoDivas");
-    const cd = await CD.deploy("ipfs://ipfshash","0xprovenancehash", 100, 10000); 
+    const CD = await ethers.getContractFactory("CryptoDivas");
+    // const CD = await ethers.getContractFactory("Treasury");
+
+    //
+    // const padded = ethers.utils.hexZeroPad("0x", 32)
+    // console.log("padded = ",padded); // 0x0000000000000000000000000000000000000000000000000000000000000000
+
+    const cd = await CD.deploy("ipfs://QmRsRcJucYGrSpgp5tWno9vEd9KXMhVFeJPFMsL1ujVKNJ","0xaf369ffdf2faa028ca323f2762fca38dc0425bace953978c2b4c293189ef66a1","0x9550dd40ed8c29bbbafe1744be53c905e3df8951c698dc529999fd17f45bcc04",1649668182, 100, 1000); 
+
+    // const cd = await CD.attach("0xDF19f15c7DD76651186cC114a43938304D00a5AF");
+
+    // await cd.withdrawAll();
 
     // await cd.setMerkleRoot("0xe07a37777568d45b24e801eff1ce0ed74408e8ede20266105543c8929bce161f");
 

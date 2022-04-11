@@ -72,7 +72,6 @@ contract CryptoDivas is Ownable, ERC721, ERC2981, Treasury {
   bytes32 public PROVENANCE_HASH;
 
   mapping(address => uint256) public presaleMinted;
-  mapping(address => uint256) public presaleMintedFree;
   
   address[] private mintPayees = [
     0xc0A0aEa4f8457Caa8C47ED5B5DA410E40EFCbf3c
@@ -86,6 +85,8 @@ contract CryptoDivas is Ownable, ERC721, ERC2981, Treasury {
 
   constructor(string memory initialDummyURI,
   bytes32 provenanceHash,
+  bytes32 _merkleRoot,
+  uint256 _NftRevealTime,
   uint256 _MAX_OWNER_RESERVE,
   uint256 _MAX_SUPPLY
   )
@@ -99,10 +100,15 @@ contract CryptoDivas is Ownable, ERC721, ERC2981, Treasury {
 
     dummyURI = initialDummyURI;
 
-    NFTRevealTime = 1646337600; // 03 March 8pm GMT
+    NFTRevealTime = _NftRevealTime;
 
     PROVENANCE_HASH = provenanceHash;
     emit ProvenanceHashUpdated(provenanceHash);
+
+    merkleRoot = _merkleRoot;
+
+    publicSaleOpen = true;
+    presaleOpen = true;
     
     presaleConfig = PresaleConfig({
       startTime: 1646843203,
